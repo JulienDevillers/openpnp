@@ -55,7 +55,7 @@ public class ClientProcessor implements Runnable {
 				}
 				case M999: {
 					ReferenceMachine machine = (ReferenceMachine) Configuration.get().getMachine();
-					GcodeDriver driver = (GcodeDriver) machine.getDriver();
+					GcodeDriver driver = (GcodeDriver) machine.getDefaultDriver();
 					try {
 						driver.sendCommand("M999", 500);
 					} catch (Exception e) {
